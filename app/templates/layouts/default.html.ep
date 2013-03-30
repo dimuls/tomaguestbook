@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title><%= title %></title>
+    <script type="text/javascript" src="/js/prefixfree.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
+  <body>
+    <%= content %>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+  </body>
+</html>

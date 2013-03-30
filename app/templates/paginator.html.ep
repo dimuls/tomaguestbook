@@ -1,0 +1,15 @@
+<div clas=="row">
+<div class="paginator">
+  <% for my $p ( 1..$pages_count ) { %>
+    <% if( $p == $page ) { %>
+      <span class="page"><%= $p %></span>
+    <% } elsif( $p == 1 ) { %> 
+      <a class="page" href="/"><%= $p %></a>
+    <% } else { %>
+      <a class="page" href="/page/<%= $p %>"><%= $p %></a>
+    <% } %>
+  <% } %>
+</div>
+</div>
+
+

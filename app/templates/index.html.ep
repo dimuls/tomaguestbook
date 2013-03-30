@@ -1,0 +1,27 @@
+% layout 'default';
+% title 'Официальный сайт Томочки';
+<div class="row">
+  <h1>Добро пожаловать на официальный сайт Томочки</h1>
+  <img class="toma-photo" src="/img/toma.jpg" >
+</div>
+<div class="row write-msg-btn">
+  <button>Написать Томочке</button>
+</div>
+<div class="row write-msg-form hidden">
+  <%= include 'message/write' %>
+</div>
+<div class="row">
+  <% if( scalar @$messages ) { %>
+    <div class="messages">
+      <% foreach my $msg ( @$messages ) { %>
+        <div class="msg">
+          <div class="message"><%= $msg->{message} %></div>
+          <div class="nick"><%= $msg->{nick} %></div>
+        </div>
+      <% } %>
+    </div> 
+  <% } %>
+</div>
+<% if ( $pages_count > 1 ) { %>
+  <%= include 'paginator', pages_count => $pages_count, page => $page %>
+<% } %>

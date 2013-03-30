@@ -1,0 +1,17 @@
+<div class="screen">
+<form class="write-message">
+  <label for="writer-name">Ваше имя:</label>
+  <input id="writer-name" value="">
+  <label for="writer-message">Ваше сообщение для Томочки:</label>
+  <textarea id="writer-message"></textarea>
+  <label for="captcha">Капча:</label>
+  <div class="captcha-container">
+    <img class="captcha" src=""><input id="writer-captcha">
+  </div>
+  <div id="writer-error"></div>
+  <div class="buttons">
+    <button class="send">Отправить</button>
+    <button class="cancel">Отмена</button>
+  </div>
+</form>
+</div>
