@@ -1,4 +1,6 @@
+.git
+.gitignore
 passwords
-app/data/captcha/*
+pp/data/captcha/*
 app/public/captcha/*
 \.swp$

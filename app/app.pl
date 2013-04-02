@@ -17,6 +17,8 @@ app->config(
   }
 );
 
+app->secret('SDF78wq&Y*qAwe1qFAS');
+
 get '/' => sub {
   my ( $self ) = @_;
   my ($messages, $pages_count, $page) = get_messages_page(1);

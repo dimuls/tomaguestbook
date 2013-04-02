@@ -5,8 +5,10 @@ www:
         www: http
     systempackages:
         - libdbd-mysql-perl
+        - libgd2-noxpm
+        - libgd2-noxpm-dev
     process: hypnotoad -f app.pl
-    postinstall: ./mysql.pl
+    postinstall: ./postinstall.pl
     requirements:
         - JSON
         - Mojolicious
@@ -14,6 +16,6 @@ www:
         - DBD::mysql
         - Exporter::Easy
         - DBIx::Connector
-        - Authen::Captcha
+        - GD
 db:
     type: mysql

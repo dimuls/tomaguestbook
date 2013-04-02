@@ -3,8 +3,6 @@ package Toma::Model;
 use v5.12.4;
 use utf8;
 
-use lib './lib';
-
 use Exporter::Easy (
   EXPORT => [qw( add_message get_messages_page )],
 );

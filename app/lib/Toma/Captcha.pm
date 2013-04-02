@@ -7,18 +7,18 @@ use Exporter::Easy (
   EXPORT => [qw(generate_captcha check_captcha)],
 );
 
-use constant CAPTCHA_LENGTH => 6;
+use Toma::Config;
 
 use Authen::Captcha;
 
 my $ch = Authen::Captcha->new(
   data_folder => './data/captcha',
   output_folder => './public/captcha',
-#  height => 2,
+  salt => $cfg->{'captcha.salt'},
 );
 
 sub generate_captcha() {
-  return $ch->generate_code(CAPTCHA_LENGTH);
+  return $ch->generate_code($cfg->{'captcha.length'});
 }
 
 sub check_captcha($$) {
