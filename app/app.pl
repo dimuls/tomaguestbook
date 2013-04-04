@@ -17,8 +17,6 @@ app->config(
   }
 );
 
-app->secret('SDF78wq&Y*qAwe1qFAS');
-
 get '/' => sub {
   my ( $self ) = @_;
   my ($messages, $pages_count, $page) = get_messages_page(1);
@@ -60,7 +58,7 @@ get '/page/:page' => sub {
 post '/message' => sub { 
   my ( $self ) = @_;
   my $session = $self->session;
-  my $nick = $self->param('nick') || '';
+  my $name = $self->param('name') || '';
   my $message = $self->param('message') || '';
   my $captcha = $self->param('captcha');
   my $captcha_md5 = $session->{captcha_md5};
@@ -69,18 +67,23 @@ post '/message' => sub {
     $self->render(json => { error => 'Ошибка: вы ввели неправильную капчу' });
     return;
   }
-  if( $nick ) { 
-    $nick =~ s/(^\s+|\s+$)//g;
+  if( $name ) { 
+    $name =~ s/(^\s+|\s+$)//g;
+    $message =~ s/\s+/ /g;
   }
   if( $message ) {
     $message =~ s/(^\s+|\s+$)//g;
     $message =~ s/\s+/ /g;
   }
-  unless( $message or length($message) > 300 or length($message) < 10 ) {
+  if( length($name) > 20 ) {
+    $self->render(json => { error => 'Ошибка: имя должно быть от 0 до 22 символов' });
+    return;
+  }
+  if( !$message or length($message) > 300 or length($message) < 10 ) {
     $self->render(json => { error => 'Ошибка: сообщение должно быть от 10 до 300 символов' });
     return;
   }
-  add_message($nick, $message);
+  add_message($name, $message);
   $self->render(json => { ok => 'Posted' });
 };
 

@@ -29,10 +29,10 @@ sub _get_dbh() {
 }
 
 sub add_message($$) {
-  my ( $nick, $message ) = @_;
+  my ( $name, $message ) = @_;
   my $dbh = _get_dbh;
-  $nick = 'Аноним' if $nick eq '';
-  $dbh->do('INSERT INTO messages(nick, message) VALUES(?, ?)', undef, $nick, $message);
+  $name = 'Аноним' if $name eq '';
+  $dbh->do('INSERT INTO messages(name, message) VALUES(?, ?)', undef, $name, $message);
 }
 
 sub get_messages_page($) {
@@ -43,7 +43,7 @@ sub get_messages_page($) {
   my $skip = MESSAGES_PER_PAGE * ($page - 1);
   my $limit = MESSAGES_PER_PAGE;
   return
-    $dbh->selectall_arrayref("SELECT * FROM messages ORDER BY id DESC LIMIT $skip, $limit", { Slice => {} }),
+    $dbh->selectall_arrayref("SELECT id, DATE_FORMAT(date, '%H:%i %d.%m.%Y') AS date, name, message FROM messages ORDER BY id DESC LIMIT $skip, $limit", { Slice => {} }),
     $pages_count,
     $page
 }

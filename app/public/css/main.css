@@ -11,6 +11,10 @@ body {
   font-family: 'Poiret One', cursive;
 }
 
+button { 
+  font-family: 'Poiret One', cursive;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -73,13 +77,20 @@ img.toma-photo {
   display: block;
   text-align: left;
 }
-.messages .msg .nick {
+.messages .msg .date {
   display: block;
-  text-align: right;
   font-style: italic;
-  font-size: 12px;
+  font-size: 10px;
+  text-align: right;
+  padding-top: 5px;
 }
-
+.messages .msg .name {
+  display: block;
+  font-style: italic;
+  text-align: left;
+  font-size: 12px;
+  padding-bottom: 5px;
+}
 .paginator {
   display: inline-block;
 }
@@ -131,7 +142,7 @@ form.write-message img.captcha {
 }
 form.write-message input#writer-captcha {
   display: inline-block;
-  width: 60px;
+  width: 80px;
   font-size: 14px;
   padding: 5px;
   margin-left: 5px;
@@ -149,7 +160,6 @@ form.write-message .buttons {
   text-align: right;
 }
 form.write-message button {
-  font-family: 'Poiret One', cursive;
   padding: 5px;
   border-radius: 5px;
 }

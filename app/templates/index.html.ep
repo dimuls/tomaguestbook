@@ -15,8 +15,9 @@
     <div class="messages">
       <% foreach my $msg ( @$messages ) { %>
         <div class="msg">
+          <div class="name"><%= $msg->{name} %>:</div>
           <div class="message"><%= $msg->{message} %></div>
-          <div class="nick"><%= $msg->{nick} %></div>
+          <div class="date"><%= $msg->{date} %></div>
         </div>
       <% } %>
     </div> 
