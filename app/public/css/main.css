@@ -1,18 +1,23 @@
 /* @import url(http://fonts.googleapis.com/css?family=Bad+Script&subset=cyrillic,latin); 
-@import url(http://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic);*/
-@import url(http://fonts.googleapis.com/css?family=Poiret+One&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Poiret+One&subset=latin,cyrillic);*/
+@import url(http://fonts.googleapis.com/css?family=Jura&subset=latin,cyrillic);
 
 body {
   background: #bf94e4;
   text-align: center;
   font-size: 14px;
   /* font-family: 'Bad Script', cursive; 
-  font-family: 'Marck Script', cursive;*/
-  font-family: 'Poiret One', cursive;
+  font-family: 'Marck Script', cursive;
+  font-family: 'Poiret One', cursive;*/
+  font-family: 'Jura', sans-serif;
 }
 
+input,
+textarea,
 button { 
-  font-family: 'Poiret One', cursive;
+  /*font-family: 'Poiret One', cursive;*/
+  font-family: 'Jura', sans-serif;
 }
 
 button:hover {

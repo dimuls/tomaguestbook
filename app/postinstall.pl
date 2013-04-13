@@ -39,8 +39,8 @@ print "\n";
 $dbh->func('createdb', $database, 'admin');
 
 $dbh = DBI->connect("DBI:mysql:dbname=$database;hostname=$host;port=$port;", $user, $password, {RaiseError=>0,PrintError=>0});
-$dbh->do('ALTER TABLE `messages` ADD COLUMN `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `id`');
-$dbh->do('ALTER TABLE `messages` CHANGE COLUMN `nick` `name` char(20) NOT NULL');
+#$dbh->do('ALTER TABLE `messages` ADD COLUMN `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `id`');
+#$dbh->do('ALTER TABLE `messages` CHANGE COLUMN `nick` `name` char(20) NOT NULL');
 #$dbh->do('DROP TABLE `messages`');
 #$dbh->do('CREATE TABLE `messages` (
 #  `id` int(11) NOT NULL AUTO_INCREMENT,

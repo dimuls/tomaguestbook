@@ -11,6 +11,11 @@ use Toma::Config;
 use Toma::Model;
 use Toma::Captcha;
 
+use Lingua::RU::Antimat;
+
+my $antimat = new Lingua::RU::Antimat();
+
+
 app->config(
   hypnotoad => {
     listen => ["http://$cfg->{'http.host'}:$cfg->{'http.port'}"]
@@ -67,9 +72,13 @@ post '/message' => sub {
     $self->render(json => { error => 'Ошибка: вы ввели неправильную капчу' });
     return;
   }
+  if( $antimat->detect_slang($name) || $antimat->detect_slang($message) ) {
+    $self->render(json => { error => 'Ошибка: запрещено использование ненормативной лексики' });
+    return;
+  }
   if( $name ) { 
     $name =~ s/(^\s+|\s+$)//g;
-    $message =~ s/\s+/ /g;
+    $name =~ s/\s+/ /g;
   }
   if( $message ) {
     $message =~ s/(^\s+|\s+$)//g;
@@ -79,7 +88,7 @@ post '/message' => sub {
     $self->render(json => { error => 'Ошибка: имя должно быть от 0 до 22 символов' });
     return;
   }
-  if( !$message or length($message) > 300 or length($message) < 10 ) {
+  if( !$message or length($message) > 600 or length($message) < 5 ) {
     $self->render(json => { error => 'Ошибка: сообщение должно быть от 10 до 300 символов' });
     return;
   }

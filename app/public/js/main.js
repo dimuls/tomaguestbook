@@ -22,7 +22,7 @@ function updateCaptcha() {
 
 function postMessage() {
   $.post('/message', {
-    nick: $('#writer-name').val(),
+    name: $('#writer-name').val(),
     message: $('#writer-message').val(),
     captcha: $('#writer-captcha').val(),
   }, function(res) {
