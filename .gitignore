@@ -2,4 +2,4 @@ passwords
 app/data/captcha/*
 app/public/captcha/*
 \.swp$
-модель-угроз
+db-dump.mysql

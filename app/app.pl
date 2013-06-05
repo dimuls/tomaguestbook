@@ -37,14 +37,14 @@ get '/captcha' => sub {
   my ( $self ) = @_;
   my $session = $self->session;
   $session->{captcha_md5} = generate_captcha() unless defined $session->{captcha_md5};
-  $self->render(text => "/captcha/$session->{captcha_md5}.png");
+  $self->render(text => "captcha/$session->{captcha_md5}.png");
 };
 
 get '/captcha/update' => sub {
   my ( $self ) = @_;
   my $session = $self->session;
   $session->{captcha_md5} = generate_captcha();
-  $self->render(text => "/captcha/$session->{captcha_md5}.png");
+  $self->render(text => "captcha/$session->{captcha_md5}.png");
 };
 
 get '/page/:page' => sub {

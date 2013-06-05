@@ -12,7 +12,7 @@ use Toma::Config;
 use Authen::Captcha;
 
 my $ch = Authen::Captcha->new(
-  data_folder => './data',
+  data_folder => './data/captcha',
   output_folder => './public/captcha',
   salt => $cfg->{'captcha.salt'},
 );

@@ -1,0 +1,6 @@
+% layout 'error';
+% title 'Cтраница не найдена';
+<div class="row">
+  <h1>Страница не найдена же</h1>
+  <img class="toma-photo" src="/img/not_found.jpg" >
+</div>
