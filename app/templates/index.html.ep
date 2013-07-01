@@ -2,7 +2,7 @@
 % title 'Официальный сайт Томочки';
 <div class="row">
   <h1>Добро пожаловать на официальный сайт Томочки!</h1>
-  <img class="toma-photo" src="/img/toma.jpg" >
+  <img class="toma-photo" src="/img/toma-2.jpg" >
 </div>
 <div class="row write-msg-btn">
   <button>Написать Томочке</button>
