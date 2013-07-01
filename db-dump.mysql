@@ -1,0 +1,53 @@
+-- MySQL dump 10.13  Distrib 5.5.31, for debian-linux-gnu (i686)
+--
+-- Host: localhost    Database: tomaguestbook
+-- ------------------------------------------------------
+-- Server version	5.5.31-0ubuntu0.12.04.2
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `name` char(20) NOT NULL,
+  `message` varchar(300) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `messages`
+--
+
+LOCK TABLES `messages` WRITE;
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+INSERT INTO `messages` VALUES (1,'2013-04-04 05:57:41','Вадим','Замечательная кошка'),(2,'2013-04-04 05:57:41','йцукен','Вадим, поздравь Марата с др.'),(3,'2013-04-04 05:57:41','Вадим','Лол'),(4,'2013-04-04 05:57:41','Лара','Привет, Томочка! Ты лучше всех, настоящая красавица и умница!'),(5,'2013-04-04 05:57:41','Емалыч','Не ешь вискас, от него почки садятся .'),(6,'2013-04-04 05:57:41','Вика','Тома, верни листки с исходниками хозяевам =)'),(9,'2013-04-04 05:57:41','Лара','Поздравляю любимую Томочку с новой капчей!'),(12,'2013-04-04 05:57:41','Шло','Ооо'),(14,'2013-04-06 08:20:47','Аноним','Привет, красавица! Ты случайно не знаешь, кто выпил пол-чашки ряженки, оставленной мной на столе?!'),(16,'2013-04-06 08:26:46','Аноним','Ох уж эта капча баговатая...'),(18,'2013-04-06 18:55:43','Аноним','Советую сменить шрифт в гостевой книге на более читаемый и крупный: этот из-за слишком тонкого начертания сильно ломает глаза.'),(25,'2013-04-09 08:32:11','Вадим','Вот теперь всё должно работать'),(26,'2013-04-09 09:06:40','Вадим','Теперь и антимат есть:3'),(27,'2013-04-09 09:10:13','Вадим','Сменил шрифт'),(28,'2013-04-15 16:48:00','Аноним','Тест системы антимата: потреблять котлеты'),(29,'2013-04-15 16:48:29','Аноним','Антимат молодец)'),(30,'2013-04-15 16:49:29','Аноним','Томочка, где другие фоточки? =)'),(31,'2013-06-03 18:10:38','Вадим','Это тестовое сообщение после восстановления сайта. Сайт работает в режиме теста, так-что могут быть глюки.'),(32,'2013-06-04 05:15:35','Аноним','ko ko ko'),(33,'2013-06-04 07:44:17','Аноним','Эге-гей!!! Даешь Котовторник! Привет от Рыжандера и Холмськи!'),(34,'2013-06-09 09:03:02','Nyan_cat','Томочка, учись открывать холодильник, там много вкусного =)'),(35,'2013-06-09 09:25:05','Admin','Дверь под ванну взламывать как раз недавно научилась. Должно быть, и холодильник не за горами!'),(36,'2013-06-14 16:00:09','Аноним','Ушки-то обрезаны'),(37,'2013-06-14 16:01:12','Аноним','Да, точно, обрезаны'),(38,'2013-06-16 06:55:54','Админ','Если не удаётся написать сообщение, то пишите мне в личку в vk.com/dimuls'),(39,'2013-06-20 17:42:23','Аноним','А ещё есть фоточки?');
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2013-07-01  9:12:28
